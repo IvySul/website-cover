@@ -2,8 +2,19 @@ body {
   margin: 0;
   background-color: black;
   display: flex;
-  justify-content: center;  
-  align-items: center;      
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 @keyframes fadeIn {
@@ -11,17 +22,68 @@ body {
   to { opacity: 1; }
 }
 
-a {
-  text-decoration: none; 
-}
-
 .text {
   animation: fadeIn 8s forwards;
   color: white;
-  min-height:100vh;
   font-family: monospace;
   font-size: 40px;
+}
+
+.bottom-row {
   display: flex;
-  justify-content: center;  
-  align-items: center;      
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.me img {
+  width: 65px;
+  cursor: pointer;
+  animation: fadeIn 8s forwards;
+}
+
+.popup-toggle {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-toggle:checked ~ .popup {
+  display: flex;
+}
+
+.popup-box {
+  background: black;
+  color: white;
+  padding: 20px;
+  width: 220px;
+  border: 1px solid white;
+  font-family: monospace;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  font-family: monospace;
+}
+
+.close {
+  cursor: pointer;
+  align-self: flex-end;
 }
